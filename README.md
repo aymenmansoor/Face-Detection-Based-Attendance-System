@@ -176,9 +176,9 @@ Face-Detection-Based-Attendance-System/
 
 The OpenCV cascade XML file is a separate runtime requirement and is not currently included in the repository.
 
-## Data and privacy
+## Privacy Considerations
 
-Face photographs and names/IDs are personal data. Only capture images with appropriate permission, keep attendance files in a protected local directory, and remove records when no longer required. The application does not include user authentication, identity verification, encrypted storage, or an automated retention policy.
+The application stores attendance records and captured face images locally. It is intended for use with appropriate consent and responsible handling of personal data.
 
 ## Scope
 

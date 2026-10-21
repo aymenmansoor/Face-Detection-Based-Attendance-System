@@ -17,6 +17,84 @@ A C++17 and OpenCV attendance-tracking application that uses a webcam to detect 
 - **Date lookup** — Check whether a student or teacher has a recorded entry for a particular date.
 - **Background logging** — Uses a worker thread and a thread-safe queue for the combined attendance log.
 
+## Application Screenshots
+
+These screenshots show actual application runs with fictional demonstration names and IDs. Expand the sections below and click any screenshot to open it at full resolution.
+
+### Attendance System Menu
+
+The terminal menu provides access to attendance recording, reports, statistics and date lookup.
+
+[![Attendance system menu with student, teacher, report and statistics options](docs/screenshots/01-attendance-menu.png)](docs/screenshots/01-attendance-menu.png)
+
+<details>
+<summary><strong>Student and Teacher Attendance</strong></summary>
+
+**Student attendance** — The terminal reports successful face detection and attendance logging.
+
+[![Student attendance confirmation after face detection](docs/screenshots/02-student-attendance.png)](docs/screenshots/02-student-attendance.png)
+
+**Teacher attendance** — Records the teacher’s name, registration number and shift after face detection.
+
+[![Teacher attendance confirmation with shift number](docs/screenshots/03-teacher-attendance.png)](docs/screenshots/03-teacher-attendance.png)
+
+</details>
+
+<details>
+<summary><strong>Daily Attendance Reports</strong></summary>
+
+**Student report** — Unique student attendees for the day.
+
+[![Daily report listing unique student attendees](docs/screenshots/04-student-daily-report.png)](docs/screenshots/04-student-daily-report.png)
+
+**Teacher report** — Unique teacher attendees for the day.
+
+[![Daily report listing unique teacher attendees](docs/screenshots/05-teacher-daily-report.png)](docs/screenshots/05-teacher-daily-report.png)
+
+</details>
+
+<details>
+<summary><strong>Historical Attendance and Date-Based Summary</strong></summary>
+
+Historical student attendance entries and the date-based entry counts produced by the Binary Search Tree.
+
+[![Historical student attendance log and Binary Search Tree summary by date](docs/screenshots/06-historical-summary.png)](docs/screenshots/06-historical-summary.png)
+
+</details>
+
+<details>
+<summary><strong>Student and Teacher Statistics</strong></summary>
+
+**Student statistics** — Highest and lowest attendance counts.
+
+[![Student attendance rankings by count](docs/screenshots/07-student-statistics.png)](docs/screenshots/07-student-statistics.png)
+
+**Teacher statistics** — Highest and lowest attendance counts.
+
+[![Teacher attendance rankings by count](docs/screenshots/08-teacher-statistics.png)](docs/screenshots/08-teacher-statistics.png)
+
+</details>
+
+<details>
+<summary><strong>Recent Attendance Activity</strong></summary>
+
+The most recent attendance entries from the current session (up to five).
+
+[![Recent student and teacher attendance entries in the current session](docs/screenshots/09-recent-activity.png)](docs/screenshots/09-recent-activity.png)
+
+</details>
+
+<details>
+<summary><strong>Attendance Lookup by Date</strong></summary>
+
+A student lookup using the entered name, ID and date; this example returns “not recorded present”.
+
+[![Attendance lookup by date showing a not-recorded-present result](docs/screenshots/10-date-lookup.png)](docs/screenshots/10-date-lookup.png)
+
+</details>
+
+> Face detection checks that a face is visible before attendance is recorded; it does not recognise or verify the entered identity. No face photographs are included in this gallery.
+
 ## Technology
 
 | Area | Implementation |
@@ -24,7 +102,7 @@ A C++17 and OpenCV attendance-tracking application that uses a webcam to detect 
 | Language | C++17 |
 | Computer vision | OpenCV, Haar cascade face detection |
 | Interface | Terminal menu and OpenCV camera window |
-| Data structures | Binary search tree, priority queues, hash maps, sets and lists |
+| Data structures | Binary Search Tree for date-based historical summaries; priority queues for attendance rankings; unordered maps for cooldown tracking and attendance counts; sets for unique attendees; lists for recent activity |
 | Concurrency | `std::thread`, mutexes, condition variable and atomic flag |
 | Storage | Local text logs and JPEG face snapshots |
 
@@ -93,7 +171,9 @@ Attendance counts are rebuilt from the student and teacher logs on startup. The 
 ```text
 Face-Detection-Based-Attendance-System/
 ├── main.cpp       # Terminal UI, face detection, logging and reports
-└── README.md      # Project documentation
+├── README.md      # Project documentation
+└── docs/
+    └── screenshots/  # 10 genuine application screenshots
 ```
 
 The OpenCV cascade XML file is a separate runtime requirement and is not currently included in the repository.

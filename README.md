@@ -19,22 +19,20 @@ A C++17 and OpenCV attendance-tracking application that uses a webcam to detect 
 
 ## Application Screenshots
 
-These screenshots show actual application runs with fictional demonstration names and IDs. Expand the sections below and click any screenshot to open it at full resolution.
+These screenshots show actual application runs with fictional demonstration names and IDs. Cropped to focus on each workflow; terminal text and results are unchanged. Expand a section and click an image for full resolution, especially on mobile.
 
 ### Attendance System Menu
-
-The terminal menu provides access to attendance recording, reports, statistics and date lookup.
 
 [![Attendance system menu with student, teacher, report and statistics options](docs/screenshots/01-attendance-menu.png)](docs/screenshots/01-attendance-menu.png)
 
 <details>
 <summary><strong>Student and Teacher Attendance</strong></summary>
 
-**Student attendance** — The terminal reports successful face detection and attendance logging.
+**Student attendance** — Face detection and logging confirmation.
 
 [![Student attendance confirmation after face detection](docs/screenshots/02-student-attendance.png)](docs/screenshots/02-student-attendance.png)
 
-**Teacher attendance** — Records the teacher’s name, registration number and shift after face detection.
+**Teacher attendance** — Name, registration number, shift and logging confirmation.
 
 [![Teacher attendance confirmation with shift number](docs/screenshots/03-teacher-attendance.png)](docs/screenshots/03-teacher-attendance.png)
 
@@ -56,7 +54,7 @@ The terminal menu provides access to attendance recording, reports, statistics a
 <details>
 <summary><strong>Historical Attendance and Date-Based Summary</strong></summary>
 
-Historical student attendance entries and the date-based entry counts produced by the Binary Search Tree.
+Historical student log excerpt and date-based counts from the Binary Search Tree.
 
 [![Historical student attendance log and Binary Search Tree summary by date](docs/screenshots/06-historical-summary.png)](docs/screenshots/06-historical-summary.png)
 
@@ -87,13 +85,13 @@ The most recent attendance entries from the current session (up to five).
 <details>
 <summary><strong>Attendance Lookup by Date</strong></summary>
 
-A student lookup using the entered name, ID and date; this example returns “not recorded present”.
+**Date lookup** — This example returns “not recorded present”.
 
 [![Attendance lookup by date showing a not-recorded-present result](docs/screenshots/10-date-lookup.png)](docs/screenshots/10-date-lookup.png)
 
 </details>
 
-> Face detection checks that a face is visible before attendance is recorded; it does not recognise or verify the entered identity. No face photographs are included in this gallery.
+The supplied daily and historical captures omit report headings; the student-statistics capture omits the bottom separator. The visible results are preserved without reconstructing missing content.
 
 ## Technology
 
